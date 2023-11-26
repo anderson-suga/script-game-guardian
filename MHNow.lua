@@ -764,11 +764,11 @@ local Prompt = gg.prompt({
 "BiggerCircle",
 "BiggerCircleForCat",
 "OneHit Small (GodElement)",
-"Change Attack (8K)",
-"Change Defense (5K)",
+"Change Attack (9K)",
+"Change Defense (7K)",
 "EasyPartBreaker"
 },nil,
-{"checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox"})
+{"checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox"})
 if Prompt == nil then
   print('✖ Script Was Canceled ✖')
 return end
@@ -858,7 +858,7 @@ if Prompt[8] == true then
 	gg.clearResults()
 	valueFromClass("WeaponLevelSpecSettingsProto", "0x1C", false, false, gg.TYPE_DWORD)					
 	gg.getResults(9000)
-	gg.editAll("8000", gg.TYPE_DWORD)
+	gg.editAll("9000", gg.TYPE_DWORD)
 	gg.clearResults()
 else
 gg.toast ('❌ Checkbox is not selected ! ')
@@ -870,7 +870,7 @@ if Prompt[9] == true then
 	gg.clearResults()
 	valueFromClass("ArmorLevelSpecSettingsProto", "0x1C", false, false, gg.TYPE_DWORD)						
 	gg.getResults(9000)
-	gg.editAll("5000", gg.TYPE_DWORD)
+	gg.editAll("7000", gg.TYPE_DWORD)
 	gg.clearResults()
 else
 gg.toast ('❌ Checkbox is not selected ! ')
