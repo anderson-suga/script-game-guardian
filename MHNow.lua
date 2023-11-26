@@ -764,7 +764,7 @@ local Prompt = gg.prompt({
 "BiggerCircle",
 "BiggerCircleForCat",
 "OneHit Small (GodElement)",
-"Change Attack (9K)",
+"Change Attack (11K)",
 "Change Defense (7K)",
 "EasyPartBreaker"
 },nil,
@@ -858,7 +858,7 @@ if Prompt[8] == true then
 	gg.clearResults()
 	valueFromClass("WeaponLevelSpecSettingsProto", "0x1C", false, false, gg.TYPE_DWORD)					
 	gg.getResults(9000)
-	gg.editAll("9000", gg.TYPE_DWORD)
+	gg.editAll("11000", gg.TYPE_DWORD)
 	gg.clearResults()
 else
 gg.toast ('❌ Checkbox is not selected ! ')
@@ -887,7 +887,6 @@ if Prompt[10] == true then
 	gg.getResults(999)
 	gg.editAll(999999999, gg.TYPE_FLOAT)
 	gg.clearResults()
-	stopClose()
 else
 gg.toast ('❌ Checkbox is not selected ! ')
 end
