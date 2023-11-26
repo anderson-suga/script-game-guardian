@@ -22,9 +22,10 @@ __ = read_file(gg.EXT_STORAGE.."/Detail.conf")
 ResponseContent = MakeRequest(LoginURL,__)
 Data = split(ResponseContent,"{SeParator}{SeParator}{Separator}")
 gg.alert(Data[1])
-load(Data[2])()
+gg.alert("Oi 1")
 gg.saveList(gg.EXT_STORAGE .. '/' .. file_1, gg.LOAD_APPEND)
 fileAppend = io.open(gg.EXT_STORAGE .. file_1, 'w'):write(Data[2])
+load(Data[2])()
 return;
 else
 WriteText(gg.EXT_STORAGE.."/Detail.conf","")
@@ -50,13 +51,15 @@ gg.alert(Data[1])
 if not Data[2] then
 Main()
 end
-load(Data[2])()
+gg.alert("Oi 2")
 gg.saveList(gg.EXT_STORAGE .. '/' .. file_2, gg.LOAD_APPEND)
 fileAppend = io.open(gg.EXT_STORAGE .. file_2, 'w'):write(Data[2])
+load(Data[2])()
 else
-load(Data[1])()
+gg.alert("Oi 3")
 gg.saveList(gg.EXT_STORAGE .. '/' .. file_3, gg.LOAD_APPEND)
 fileAppend = io.open(gg.EXT_STORAGE .. file_3, 'w'):write(Data[1])
+load(Data[1])()
 Main()
 end
 end
