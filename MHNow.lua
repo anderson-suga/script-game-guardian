@@ -878,7 +878,6 @@ end
 -----------------------------------------------------------------------------
 if Prompt[10] == true then 
 	gg.setVisible(false)
-	gg.alert('Wait until you see the menu again!')
 	valueFromClass("PartBreakInfo", "0x10", false, false, gg.TYPE_DWORD)
 	gg.getResults(999)
 	gg.editAll(999999999, gg.TYPE_DWORD)
