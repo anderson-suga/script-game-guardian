@@ -922,7 +922,7 @@ local Prompt = gg.prompt({
 "SmallRecoil",
 "SmallReload"
 },nil,
-{"checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox"})
+{"checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox"})
 if Prompt == nil then
   print('✖ Script Was Canceled ✖')
 return end
