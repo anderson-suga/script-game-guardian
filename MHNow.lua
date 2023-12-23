@@ -1,14 +1,11 @@
 
-userMode = 2 -- 1 = Developer mode, 2 = user mode
-
-
-
+userMode = 2
 
 
 gg.setVisible(false)
 
 function mainMenu()
-  firstMenu = gg.choice({"[1]-SpeedNoteRemove", "[2]-HunterOptions", "[3]-EnemyOptions", "[4]-MapOptions", "[5]-Full GodMode", "[6]-SpeedHack", "[7]-MultiChoice", "[CONFIGS]", "[QUICK-OPTIONS]","❌EXIT❌","👉INFOS👈"}, nil, "Made by Hylianer")
+  firstMenu = gg.choice({"[1]-SpeedNoteRemove", "[2]-HunterOptions", "[3]-EnemyOptions", "[4]-MapOptions", "[5]-Full GodMode", "[6]-SpeedHack", "[7]-MultiChoice", "[CONFIGS]", "[QUICK-OPTIONS⭐]","❌EXIT❌","👉INFOS👈"}, nil, "Made by Hylianer")
   if firstMenu == nil then
     goto nill
   end
@@ -33,14 +30,11 @@ function mainMenu()
   if firstMenu == 7 then
     cheat_7()	
   end
-
+ 
   
   
   
-  
-  
-  
-      if firstMenu == 8 then
+   if firstMenu == 8 then
     cheat_8()	
   end
     if firstMenu == 9 then
@@ -50,7 +44,7 @@ function mainMenu()
     os.exit()
   end
   if firstMenu == 11 then
-    cheat_10()
+    cheat_11()
   end
   ::nill::
 end
@@ -62,6 +56,23 @@ end
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--SpeedNoteRemove
 function cheat_1()
   gg.alert('Wait until you see the menu again!')
   valueFromClass("SpeedLimitSettingsProto", "0x10", false, false, gg.TYPE_DWORD)
@@ -71,13 +82,13 @@ function cheat_1()
   stopClose()
 end
 
-
+--HunterOptions
 function cheat_2()
 			
 			
 			
 			-- Meldung anzeigen
-			local menuPL = gg.choice({'Change Attack','Change ElementAttack','Change Defense','Change Crit.-Damage%','SpeedUpHunter','Change WeaponElement','PrivacyMode','SetTPWeaponLevels','SetTPArmorLevels','SuperHealth','SuperRecovery','BowGunOptions'},nil,'Select Option')
+			local menuPL = gg.choice({'Change Attack','Change ElementAttack','Change Defense','Change Crit.-Damage%','SpeedUpHunter','Change WeaponElement','PrivacyMode','SetTPWeaponLevels','SetTPArmorLevels','SuperHealth','SuperRecovery','WeaponOptions','FullGauge⭐'},nil,'Select Option')
 			gg.setVisible(false)
 			-- Wenn der Benutzer "Abbrechen" klickt,
 			if menuPL == 0 then
@@ -349,36 +360,129 @@ function cheat_2()
 
 
  			elseif menuPL == 11 then
-  						valueFromClass("FieldHunterHealthService", "0x30", false, false, gg.TYPE_DOUBLE)
+  						valueFromClass("FieldHunterHealthService", "0x20", false, false, gg.TYPE_DOUBLE)
   						gg.getResults(9999)
-  						gg.editAll(500000, gg.TYPE_DOUBLE)
+  						gg.editAll(5000, gg.TYPE_DOUBLE)
   						gg.clearResults()
   						stopClose()  						
 
 
  			elseif menuPL == 12 then
-						local menuAT = gg.choice({'BigAmmo','SmallRecoil','SmallReload'},nil,'BowGunOptions!')
+			
+						local menuAT = gg.choice({'BowGunOptions','DualBladeOptions','LongSword'},nil,'Select Level')
 						gg.setVisible(false)
+						gg.getResults(9000)
+						gg.refineNumber("1~5", gg.TYPE_DWORD)
+						gg.getResults(9000)
 						-- Wenn der Benutzer "Abbrechen" klickt,
 						if menuAT == 0 then
 						-- Keine Aktion durchführen
 						elseif menuAT == 1 then
-  						valueFromClass("BowgunAmmoSpec", "0x20", false, false, gg.TYPE_DWORD)
-  						gg.getResults(9999)
-  						gg.editAll("50", gg.TYPE_DWORD)
-  						gg.clearResults()
-						elseif menuAT == 2 then
-  						valueFromClass("BowgunAmmoSpec", "0x18", false, false, gg.TYPE_DWORD)
-  						gg.getResults(9999)
-  						gg.editAll("1", gg.TYPE_DWORD)
-  						gg.clearResults()
-						elseif menuAT == 3 then
-  						valueFromClass("BowgunAmmoSpec", "0x1C", false, false, gg.TYPE_DWORD)
-  						gg.getResults(9999)
-  						gg.editAll("1", gg.TYPE_DWORD)
-  						gg.clearResults()
-						end
 
+							local menuBG = gg.choice({'BigAmmo','SmallRecoil','SmallReload'},nil,'BowGunOptions!')
+							gg.setVisible(false)
+							-- Wenn der Benutzer "Abbrechen" klickt,
+							if menuBG == 0 then
+							-- Keine Aktion durchführen
+							elseif menuBG == 1 then
+  							valueFromClass("BowgunAmmoSpec", "0x20", false, false, gg.TYPE_DWORD)
+  							gg.getResults(9999)
+  							gg.editAll("50", gg.TYPE_DWORD)
+  							gg.clearResults()
+							elseif menuBG == 2 then
+  							valueFromClass("BowgunAmmoSpec", "0x18", false, false, gg.TYPE_DWORD)
+  							gg.getResults(9999)
+  							gg.editAll("1", gg.TYPE_DWORD)
+  							gg.clearResults()
+							elseif menuBG == 3 then
+  							valueFromClass("BowgunAmmoSpec", "0x1C", false, false, gg.TYPE_DWORD)
+  							gg.getResults(9999)
+  							gg.editAll("1", gg.TYPE_DWORD)
+  							gg.clearResults()
+							end
+
+
+
+						elseif menuAT == 2 then
+
+							local menuBG = gg.choice({'UnlimitedDeamonMode'},nil,'BowGunOptions!')
+							gg.setVisible(false)
+							-- Wenn der Benutzer "Abbrechen" klickt,
+							if menuBG == 0 then
+							-- Keine Aktion durchführen
+							elseif menuBG == 1 then
+  							valueFromClass("BattleDualBladesLogicSetup", "0x38", false, false, gg.TYPE_FLOAT)
+  							gg.getResults(9999)
+  							gg.editAll("50000", gg.TYPE_FLOAT)
+  							gg.clearResults()
+							end
+
+
+
+						elseif menuAT == 3 then
+
+							local menuBG = gg.choice({'AlwaysSpirit','SpiritNoReduce'},nil,'BowGunOptions!')
+							gg.setVisible(false)
+							-- Wenn der Benutzer "Abbrechen" klickt,
+							if menuBG == 0 then
+							-- Keine Aktion durchführen
+							elseif menuBG == 1 then
+  							valueFromClass("BattleLongSwordLogicSetup", "0x1C", false, false, gg.TYPE_DWORD)
+  							gg.getResults(9999)
+  							gg.editAll("0", gg.TYPE_DWORD)
+  							gg.clearResults()
+							elseif menuBG == 2 then
+  							valueFromClass("BattleLongSwordLogicSetup", "0x50", false, false, gg.TYPE_FLOAT)
+  							gg.getResults(9999)
+  							gg.editAll("50000", gg.TYPE_FLOAT)
+  							gg.clearResults()
+							end							
+
+
+
+
+						-- elseif menuAT == 4 then
+							-- get_AvailableAllEquipments
+							-- gg.alert('READ! EQUIPPING A WEAPON OR ARMOR THAT IS NOT OFFICIAL MAY CAUSE A BUG')
+							-- gg.alert('AGAIN! DO NOT EQUIPPING A WEAPON OR ARMOR THAT IS NOT OFFICIAL RELEASED')
+							-- gg.alert('YOUR GAME WILL OTHERWISE FREEZE! DO NOT EQUIPPING A WEAPON OR ARMOR THAT IS NOT OFFICIAL RELEASED')
+							-- gg.setVisible(false)
+							-- gg.setRanges(gg.REGION_CODE_APP)
+							-- gg.searchNumber("h E0 03 1F 2A C0 03 5F D6 C0 03 5F D6 E0 03 1F 2A C0 03 5F D6 C0 03 5F D6 E0 03 1F 2A C0 03 5F D6 C0 03 5F D6 E0 03 1F 2A C0 03 5F D6 C0 03 5F D6 E0 03 1F 2A C0 03 5F D6 C0 03 5F D6 F6 0F 1D F8")
+							-- gg.getResults(9999)
+							-- gg.editAll("h 20 00 80 D2 C0 03 5F D6 C0 03 5F D6 E0 03 1F 2A C0 03 5F D6 C0 03 5F D6 E0 03 1F 2A C0 03 5F D6 C0 03 5F D6 E0 03 1F 2A C0 03 5F D6 C0 03 5F D6 E0 03 1F 2A C0 03 5F D6 C0 03 5F D6 F6 0F 1D F8", gg.TYPE_BYTE)
+							-- gg.setVisible(false)
+							-- stopClose()
+  							-- gg.clearResults()
+							 end	
+
+
+
+
+								
+			
+			
+			
+			
+						
+			
+			
+			
+			
+			
+			
+						
+ 			elseif menuPL == 13 then
+			--  get_SpecialGaugeMax
+					gg.alert('Wait until you see the menu again!')
+					gg.setVisible(false)
+					gg.setRanges(gg.REGION_CODE_APP)
+					gg.searchNumber("h F5 53 C2 A8 C0 03 5F D6 E0 03 1F 2A C0 03 5F D6 F5 53 BE A9 F3 7B 01 A9 95 71 02 F0 34 49 02 F0 A8 12 5D 39 94 16 44 F9 13 00 00 12 C8 00 00 37")
+					gg.getResults(9999)
+					gg.editAll("h F5 53 C2 A8 C0 03 5F D6 20 00 80 D2 C0 03 5F D6 F5 53 BE A9 F3 7B 01 A9 95 71 02 F0 34 49 02 F0 A8 12 5D 39 94 16 44 F9 13 00 00 12 C8 00 00 37", gg.TYPE_BYTE)
+					gg.setVisible(false)
+					stopClose()
+					
 
 
 
@@ -407,12 +511,12 @@ function cheat_2()
                 	
  end
 
-		
+--EnemyOptions		
 function cheat_3()
 		
 
 		-- Meldung anzeigen
-			local menuPL = gg.choice({'EasyPartBreaker','FreezeNearMonster','SmallMonsterInstaKill','LastHitIsNotSlomo','PartBreakIsNotSlomo','ElementWeakness','PhysicalDamageChange','ElementalDamageChange'},nil,'Select Option')
+			local menuPL = gg.choice({'EasyPartBreaker','DumbMonster⭐','LastHitIsNotSlomo','PartBreakIsNotSlomo','ElementWeakness','PhysicalDamageChange','ElementalDamageChange'},nil,'Select Option')
 			gg.setVisible(false)
 			-- Wenn der Benutzer "Abbrechen" klickt,
 			if menuPL == 0 then
@@ -433,48 +537,34 @@ function cheat_3()
 			
 
 			elseif menuPL == 2 then
-			
-			
+				-- get_EnemyAiOff
 					gg.alert('Wait until you see the menu again!')
-					valueFromClass("MotionController", "0x28", false, false, gg.TYPE_FLOAT)
-					gg.getResults(9000)
-					gg.refineNumber(1)
+					gg.setVisible(false)
+					gg.setRanges(gg.REGION_CODE_APP)
+					gg.searchNumber("h E0 03 1F 2A C0 03 5F D6 F5 53 BE A9 F3 7B 01 A9 94 71 02 F0 B5 48 02 90 88 E6 5C 39 B5 4E 46 F9")
+					gg.getResults(9999)
+					gg.editAll("h 20 00 80 52 C0 03 5F D6 F5 53 BE A9 F3 7B 01 A9 94 71 02 F0 B5 48 02 90 88 E6 5C 39 B5 4E 46 F9", gg.TYPE_BYTE)
+					gg.setVisible(false)
+					stopClose()
+					
+
+					
+			elseif menuPL == 3 then
+			
+					
+					gg.alert('Wait until you see the menu again!')
+					valueFromClass("FinishEffectInfo", "0x20", false, false, gg.TYPE_FLOAT)
 					gg.getResults(9000)
 					gg.editAll(0, gg.TYPE_FLOAT)
 					gg.clearResults()
 					stopClose()
 					
-			elseif menuPL == 3 then
-			
-			
-					gg.alert('READ! in this mode your attack is set to 0 (DONT USE ATTACK BOOST)\n but your elemental attack is very high. \nWhich means you can only defeat large monsters with elemental weaknes!')
-					gg.setVisible(false)
-					valueFromClass("WeaponLevelSpecSettingsProto", "0x1C", false, false, gg.TYPE_DOUBLE)
-					gg.getResults(9000)
-					gg.editAll(1, gg.TYPE_DOUBLE)
-					gg.clearResults()
-					
-					
-					stopClose()
-
-
 					
 			elseif menuPL == 4 then
 			
 					
 					gg.alert('Wait until you see the menu again!')
-					valueFromClass("FinishEffectInfo", "0x20", false, false, gg.TYPE_FLOAT)
-					gg.getResults(9000)
-					gg.editAll(0, gg.TYPE_FLOAT)
-					gg.clearResults()
-					stopClose()
-					
-					
-			elseif menuPL == 5 then
-			
-					
-					gg.alert('Wait until you see the menu again!')
-					valueFromClass("FinishEffectInfo", "0x20", false, false, gg.TYPE_FLOAT)
+					valueFromClass("PartBreakEffectInfo", "0x10", false, false, gg.TYPE_FLOAT)
 					gg.getResults(9000)
 					gg.editAll(0, gg.TYPE_FLOAT)
 					gg.clearResults()
@@ -482,7 +572,7 @@ function cheat_3()
 
 
 
- 			elseif menuPL == 6 then
+ 			elseif menuPL == 5 then
 						local menuAT = gg.choice({'fire','water','thunder','ice','dragon','poison','paralysis','sleep'},nil,'Choose the monsters` weaknesses !')
 						gg.setVisible(false)
 						-- Wenn der Benutzer "Abbrechen" klickt,
@@ -530,7 +620,7 @@ function cheat_3()
   						gg.clearResults()
 						end
 						
- 			elseif menuPL == 7 then
+ 			elseif menuPL == 6 then
 						local menuAT = gg.choice({'cut','blunt','ammo'},nil,'Choose which physical damage should be overpowered!')
 						gg.setVisible(false)
 						-- Wenn der Benutzer "Abbrechen" klickt,
@@ -599,12 +689,12 @@ function cheat_3()
 		
 		end
 
-
+--MapOptions
 function cheat_4()
 		
 		
 		-- Meldung anzeigen
-			local menuPL = gg.choice({'FullMapLoading','WanderBoostUltra','BiggerCircle','BiggerCircleForCat'},nil,'Select Option')
+			local menuPL = gg.choice({'FullMapLoading','WanderBoostUltra','BiggerCircle','BiggerCircleForCat','NoCircleForCat','MaxZoomOut⭐'},nil,'Select Option')
 			gg.setVisible(false)
 			-- Wenn der Benutzer "Abbrechen" klickt,
 			if menuPL == 0 then
@@ -652,7 +742,27 @@ function cheat_4()
 					gg.clearResults()
 					stopClose()						
 			
-				
+			elseif menuPL == 5 then
+					gg.setVisible(false)
+					gg.alert('Wait until you see the menu again!')
+					valueFromClass("DistanceLayerInfo", "0x10", false, false, gg.TYPE_FLOAT)
+					gg.getResults(999)
+					gg.editAll(1, gg.TYPE_FLOAT)
+					gg.clearResults()
+					stopClose()						
+							
+
+ 			elseif menuPL == 6 then
+			--  get_FieldDistance
+					gg.alert('Wait until you see the menu again!')
+					gg.setVisible(false)
+					gg.setRanges(gg.REGION_CODE_APP)
+					gg.searchNumber("h E0 03 1F 2A C0 03 5F D6 F5 53 BE A9 F3 7B 01 A9 94 71 02 B0 B5 47 02 B0 88 1A 5E 39 B5 6A 47 F9 F3 03 00 2A C8 00 00 37 A0 47 02 B0 00 68 47 F9")
+					gg.getResults(9999)
+					gg.editAll("h 20 00 80 D2 C0 03 5F D6 F5 53 BE A9 F3 7B 01 A9 94 71 02 B0 B5 47 02 B0 88 1A 5E 39 B5 6A 47 F9 F3 03 00 2A C8 00 00 37 A0 47 02 B0 00 68 47 F9", gg.TYPE_BYTE)
+					gg.setVisible(false)
+					stopClose()
+
 			
 
 		end
@@ -664,7 +774,7 @@ function cheat_4()
 		
 		end
 
-
+--Full GodMode
 function cheat_5()
   gg.alert('Wait until you see the menu again!')
   gg.setVisible(false)
@@ -680,7 +790,7 @@ function cheat_5()
   stopClose()
 end
 
-
+--SpeedHack
 function cheat_6()
 local hexConvert = 0x0
 local dataType = 0x0
@@ -901,79 +1011,36 @@ end
 
 
 end
-	
-	
-
+		
+--MultiChoice
 function cheat_7()
 gg.alert('Wait until you see the menu again!\n\nDepending on the amount of selection, this can take a VERY LONG time\nbut it load all selected options in once!')
 -----------------------------------------------------------------------------
 local Prompt = gg.prompt({
-"SpeedNoteRemove",
-"GodMode",
-"Speedhack(x2)",
-"Speedhack(x3)",
 "FullMapLoading",
 "BiggerCircle",
-"BiggerCircleForCat",
-"OneHit Small (GodElement)",
+"NoCircleForCat",
+"PartBreakIsNotSlomo",
 "Change Attack (11K)",
+"Change Attack (5K)",
+"Change ElementAttack (6K)",
 "Change Defense (7K)",
-"EasyPartBreaker",
-"SmallRecoil",
-"SmallReload"
+"(BowGunOptions) SmallRecoil",
+"(BowGunOptions) SmallReload",
+"(DualBladeOptions) UnlimitedDeamonMode",
+"(LongSword) AlwaysSpirit",
+"(LongSword) SpiritNoReduce",
+"SetTPWeaponLevels",
+"SetTPArmorLevels"
 },nil,
-{"checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox"})
+{"checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox"})
+-----------------------------------------------------------------------------
 if Prompt == nil then
   print('✖ Script Was Canceled ✖')
 return end
 -----------------------------------------------------------------------------
+-- FullMapLoading
 if Prompt[1] == true then 
-	valueFromClass("SpeedLimitSettingsProto", "0x10", false, false, gg.TYPE_DWORD)
-	gg.getResults(9999)
-	gg.editAll(0, gg.TYPE_DWORD)
-	gg.clearResults()
-else
-gg.toast ('❌ Checkbox is not selected ! ')
-end
------------------------------------------------------------------------------
-if Prompt[2] == true then
-    gg.setRanges(gg.REGION_ANONYMOUS)
-	valueFromClass("WeaponLevelSpecSettingsProto", "0x1C", false, false, gg.TYPE_DWORD)
-	gg.getResults(9999)
-	gg.editAll(999999, gg.TYPE_DWORD)
-	gg.clearResults()
-	gg.setRanges(gg.REGION_ANONYMOUS)
-	valueFromClass("ArmorLevelSpecSettingsProto", "0x1C", false, false, gg.TYPE_DWORD)
-	gg.getResults(9999)
-	gg.editAll(90000, gg.TYPE_DWORD)
-	gg.clearResults()
-else
-gg.toast ('❌ Checkbox is not selected ! ')
-end
------------------------------------------------------------------------------
-if Prompt[3] == true then 
-	gg.setRanges(gg.REGION_ANONYMOUS)
-	gg.setVisible(false)	
-	gg.searchNumber('h 00 00 80 3F AB AA AA 3E')								
-	gg.getResults(9000)
-	gg.editAll('h 00 00 40 40 AB AA AA 3E', gg.TYPE_BYTE)
-	gg.clearResults()
-else
-gg.toast ('❌ Checkbox is not selected ! ')
-end
------------------------------------------------------------------------------
-if Prompt[4] == true then 
-	gg.setRanges(gg.REGION_ANONYMOUS)
-	gg.setVisible(false)	
-	gg.searchNumber('h 00 00 80 3F AB AA AA 3E')								
-	gg.getResults(9000)
-	gg.editAll('h 00 00 80 40 AB AA AA 3E', gg.TYPE_BYTE)
-	gg.clearResults()
-else
-gg.toast ('❌ Checkbox is not selected ! ')
-end
------------------------------------------------------------------------------
-if Prompt[5] == true then 
 	gg.setVisible(false)
 	valueFromClass("MapViewport", "0x30", false, false, gg.TYPE_DOUBLE)
 	gg.getResults(999)
@@ -985,7 +1052,8 @@ else
 gg.toast ('❌ Checkbox is not selected ! ')
 end
 -----------------------------------------------------------------------------
-if Prompt[6] == true then 
+-- BiggerCircle
+if Prompt[2] == true then 
 	gg.setVisible(false)
 	valueFromClass("DistanceSensor", "0x3C", false, false, gg.TYPE_FLOAT)
 	gg.getResults(999)
@@ -995,33 +1063,33 @@ else
 gg.toast ('❌ Checkbox is not selected ! ')
 end
 -----------------------------------------------------------------------------
-if Prompt[7] == true then 
+-- NoCircleForCat
+if Prompt[3] == true then 
 	gg.setVisible(false)
 	valueFromClass("DistanceLayerInfo", "0x10", false, false, gg.TYPE_FLOAT)
 	gg.getResults(999)
-	gg.editAll(9999, gg.TYPE_FLOAT)
+	gg.editAll(1, gg.TYPE_FLOAT)
 	gg.clearResults()
 else
 gg.toast ('❌ Checkbox is not selected ! ')
 end
 -----------------------------------------------------------------------------
-if Prompt[8] == true then 
+-- PartBreakIsNotSlomo
+if Prompt[4] == true then 
 	gg.setVisible(false)
-	gg.sleep(1000)
-	gg.clearResults()
-	valueFromClass("WeaponLevelSpecSettingsProto", "0x20", false, false, gg.TYPE_DWORD)						
+	valueFromClass("PartBreakEffectInfo", "0x10", false, false, gg.TYPE_FLOAT)
 	gg.getResults(9000)
-	gg.editAll("9999999", gg.TYPE_DWORD)
+	gg.editAll(0, gg.TYPE_FLOAT)
 	gg.clearResults()
 else
 gg.toast ('❌ Checkbox is not selected ! ')
 end
 -----------------------------------------------------------------------------
-if Prompt[9] == true then 
+-- Change Attack (11K)
+if Prompt[5] == true then 
 	gg.setVisible(false)
-	gg.sleep(1000)
-	gg.clearResults()
-	valueFromClass("WeaponLevelSpecSettingsProto", "0x1C", false, false, gg.TYPE_DWORD)					
+	gg.setRanges(gg.REGION_ANONYMOUS)
+	valueFromClass("WeaponLevelSpecSettingsProto", "0x1C", false, false, gg.TYPE_DWORD)
 	gg.getResults(9000)
 	gg.editAll("11000", gg.TYPE_DWORD)
 	gg.clearResults()
@@ -1029,11 +1097,35 @@ else
 gg.toast ('❌ Checkbox is not selected ! ')
 end
 -----------------------------------------------------------------------------
-if Prompt[10] == true then 
+-- Change Attack (5K)
+if Prompt[6] == true then 
 	gg.setVisible(false)
-	gg.sleep(1000)
+	gg.setRanges(gg.REGION_ANONYMOUS)
+	valueFromClass("WeaponLevelSpecSettingsProto", "0x1C", false, false, gg.TYPE_DWORD)
+	gg.getResults(9000)
+	gg.editAll("5000", gg.TYPE_DWORD)
 	gg.clearResults()
-	valueFromClass("ArmorLevelSpecSettingsProto", "0x1C", false, false, gg.TYPE_DWORD)						
+else
+gg.toast ('❌ Checkbox is not selected ! ')
+end
+-----------------------------------------------------------------------------
+-- Change ElementAttack (6K)
+if Prompt[7] == true then 
+	gg.setVisible(false)
+	gg.setRanges(gg.REGION_ANONYMOUS)
+	valueFromClass("WeaponLevelSpecSettingsProto", "0x20", false, false, gg.TYPE_DWORD)
+	gg.getResults(9000)
+	gg.editAll("6000", gg.TYPE_DWORD)
+	gg.clearResults()
+else
+gg.toast ('❌ Checkbox is not selected ! ')
+end
+-----------------------------------------------------------------------------
+-- Change Defense (7K)
+if Prompt[8] == true then 
+	gg.setVisible(false)
+	gg.setRanges(gg.REGION_ANONYMOUS)
+	valueFromClass("ArmorLevelSpecSettingsProto", "0x1C", false, false, gg.TYPE_DWORD)
 	gg.getResults(9000)
 	gg.editAll("7000", gg.TYPE_DWORD)
 	gg.clearResults()
@@ -1041,33 +1133,102 @@ else
 gg.toast ('❌ Checkbox is not selected ! ')
 end
 -----------------------------------------------------------------------------
+-- (BowGunOptions) SmallRecoil
+if Prompt[9] == true then 
+	gg.setVisible(false)
+	gg.getResults(9000)
+	gg.refineNumber("1~5", gg.TYPE_DWORD)
+	gg.getResults(9000)
+	gg.setVisible(false)
+	valueFromClass("BowgunAmmoSpec", "0x18", false, false, gg.TYPE_DWORD)
+  	gg.getResults(9999)
+  	gg.editAll("1", gg.TYPE_DWORD)
+	gg.clearResults()
+else
+gg.toast ('❌ Checkbox is not selected ! ')
+end
+-----------------------------------------------------------------------------
+-- (BowGunOptions) SmallReload
+if Prompt[10] == true then 
+	gg.setVisible(false)
+	gg.getResults(9000)
+	gg.refineNumber("1~5", gg.TYPE_DWORD)
+	gg.getResults(9000)
+	gg.setVisible(false)
+	valueFromClass("BowgunAmmoSpec", "0x1C", false, false, gg.TYPE_DWORD)
+  	gg.getResults(9999)
+  	gg.editAll("1", gg.TYPE_DWORD)
+	gg.clearResults()
+else
+gg.toast ('❌ Checkbox is not selected ! ')
+end
+-----------------------------------------------------------------------------
+-- (DualBladeOptions) UnlimitedDeamonMode
 if Prompt[11] == true then 
 	gg.setVisible(false)
-	valueFromClass("PartBreakInfo", "0x10", false, false, gg.TYPE_DWORD)
-	gg.getResults(999)
-	gg.editAll(999999999, gg.TYPE_DWORD)
-	gg.clearResults()
-	valueFromClass("PartBreakInfo", "0x14", false, false, gg.TYPE_FLOAT)
-	gg.getResults(999)
-	gg.editAll(999999999, gg.TYPE_FLOAT)
+	gg.getResults(9000)
+	gg.refineNumber("1~5", gg.TYPE_DWORD)
+	gg.getResults(9000)
+	gg.setVisible(false)
+	valueFromClass("BattleDualBladesLogicSetup", "0x38", false, false, gg.TYPE_FLOAT)
+  	gg.getResults(9999)
+  	gg.editAll("50000", gg.TYPE_FLOAT)
 	gg.clearResults()
 else
 gg.toast ('❌ Checkbox is not selected ! ')
 end
 -----------------------------------------------------------------------------
+-- (LongSword) AlwaysSpirit
 if Prompt[12] == true then 
-	valueFromClass("BowgunAmmoSpec", "0x18", false, false, gg.TYPE_DWORD)
-	gg.getResults(9999)
-	gg.editAll("1", gg.TYPE_DWORD)
+	gg.setVisible(false)
+	gg.getResults(9000)
+	gg.refineNumber("1~5", gg.TYPE_DWORD)
+	gg.getResults(9000)
+	gg.setVisible(false)
+	valueFromClass("BattleLongSwordLogicSetup", "0x1C", false, false, gg.TYPE_DWORD)
+  	gg.getResults(9999)
+  	gg.editAll("0", gg.TYPE_DWORD)
 	gg.clearResults()
 else
 gg.toast ('❌ Checkbox is not selected ! ')
 end
 -----------------------------------------------------------------------------
+-- (LongSword) SpiritNoReduce
 if Prompt[13] == true then 
-	valueFromClass("BowgunAmmoSpec", "0x1C", false, false, gg.TYPE_DWORD)
-	gg.getResults(9999)
-	gg.editAll("1", gg.TYPE_DWORD)
+	gg.setVisible(false)
+	gg.getResults(9000)
+	gg.refineNumber("1~5", gg.TYPE_DWORD)
+	gg.getResults(9000)
+	gg.setVisible(false)
+	valueFromClass("BattleLongSwordLogicSetup", "0x50", false, false, gg.TYPE_FLOAT)
+  	gg.getResults(9999)
+  	gg.editAll("50000", gg.TYPE_FLOAT)
+	gg.clearResults()
+else
+gg.toast ('❌ Checkbox is not selected ! ')
+end
+-----------------------------------------------------------------------------
+-- SetTPWeaponLevels
+if Prompt[14] == true then 
+	valueFromClass("UserHunterWeapon", "0x2C", false, false, gg.TYPE_DWORD)
+	gg.setVisible(false)
+	gg.getResults(9000)
+	gg.refineNumber("1~5", gg.TYPE_DWORD)
+	gg.getResults(9000)
+	gg.editAll("5", gg.TYPE_DWORD)
+	gg.clearResults()
+else
+gg.toast ('❌ Checkbox is not selected ! ')
+end
+-----------------------------------------------------------------------------
+-- SetTPArmorLevels
+if Prompt[15] == true then 
+	valueFromClass("UserHunterArmor", "0x2C", false, false, gg.TYPE_DWORD)
+	gg.setVisible(false)
+	gg.getResults(9000)
+	gg.refineNumber("1~5", gg.TYPE_DWORD)
+	gg.getResults(9000)
+	gg.editAll("5", gg.TYPE_DWORD)
 	gg.clearResults()
 else
 gg.toast ('❌ Checkbox is not selected ! ')
@@ -1080,11 +1241,13 @@ end
 
 
 
-
-
-
+--CONFIGS
 function cheat_8()
-						local menuAT = gg.choice({'FullMapOptions\nGodMode\nSpeedNoteRemove\n','FullMapOptions\nSpeedNoteRemove\nInstaKillSmall\nChangeWeaponToFire\nMonsterHaveFireWeakness\nMonsterElementDamageIsHigh\n\n'},nil,'Choose Config !')
+						local menuAT = gg.choice({
+						'-1.Option\nFullMapOptions\nGodMode\nSpeedNoteRemove\n',
+						'-2.Option\nFullMapOptions\nSpeedNoteRemove\nInstaKillSmall\nChangeWeaponToFire\nMonsterHaveFireWeakness\nMonsterElementDamageIsHigh\n\n',
+						'-3.Option\nFullMapOptions\nAttack-50000\nSpeedNoteRemove\nDumbMonster\nEasyPartyBreak\n'
+						},nil,'Choose Config !')
 						gg.setVisible(false)
 						-- Wenn der Benutzer "Abbrechen" klickt,
 						if menuAT == 0 then
@@ -1193,6 +1356,81 @@ stopClose()
 
 
 
+						elseif menuAT == 3 then
+
+---------------------------------------------------------------------------------------------
+  gg.alert('Wait until you see the menu again!\nThis can take some time!')
+  gg.setVisible(false)
+  valueFromClass("SpeedLimitSettingsProto", "0x10", false, false, gg.TYPE_DWORD)
+  gg.getResults(9999)
+  gg.editAll(0, gg.TYPE_DWORD)
+  gg.clearResults()
+  gg.setVisible(false)
+  valueFromClass("MapViewport", "0x30", false, false, gg.TYPE_DOUBLE)
+  gg.getResults(999)
+  gg.refineNumber(350, gg.TYPE_DOUBLE)
+  gg.getResults(10)
+  gg.editAll(999, gg.TYPE_DOUBLE)
+  gg.clearResults()
+  gg.setVisible(false)
+  valueFromClass("DistanceSensor", "0x3C", false, false, gg.TYPE_FLOAT)
+  gg.getResults(999)
+  gg.editAll(9999, gg.TYPE_FLOAT)
+  gg.clearResults()
+  gg.setVisible(false)
+  valueFromClass("DistanceLayerInfo", "0x10", false, false, gg.TYPE_FLOAT)
+  gg.getResults(999)
+  gg.editAll(9999, gg.TYPE_FLOAT)
+  gg.clearResults()
+
+  
+-- MapOptionsReady
+
+
+	gg.setVisible(false)
+	gg.setRanges(gg.REGION_CODE_APP)
+	gg.searchNumber("h E0 03 1F 2A C0 03 5F D6 F5 53 BE A9 F3 7B 01 A9 94 71 02 F0 B5 48 02 90 88 E6 5C 39 B5 4E 46 F9")
+	gg.getResults(9999)
+	gg.editAll("h 20 00 80 52 C0 03 5F D6 F5 53 BE A9 F3 7B 01 A9 94 71 02 F0 B5 48 02 90 88 E6 5C 39 B5 4E 46 F9", gg.TYPE_BYTE)
+	gg.setVisible(false)
+	stopClose()
+	gg.setVisible(false)
+	valueFromClass("PartBreakInfo", "0x10", false, false, gg.TYPE_DWORD)
+	gg.getResults(999)
+	gg.editAll(999999999, gg.TYPE_DWORD)
+	gg.clearResults()
+	valueFromClass("PartBreakInfo", "0x14", false, false, gg.TYPE_FLOAT)
+	gg.getResults(999)
+	gg.editAll(999999999, gg.TYPE_FLOAT)
+	gg.clearResults()
+	gg.setVisible(false)
+	valueFromClass("WeaponLevelSpecSettingsProto", "0x1C", false, false, gg.TYPE_DWORD)
+	gg.getResults(9999)
+	gg.editAll(50000, gg.TYPE_DWORD)
+	gg.clearResults()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1200,18 +1438,20 @@ stopClose()
 						end
 						
 end
-	
+
+--QUICK-OPTIONS
 function cheat_9()
-gg.alert('NOTICE: \nThis Options are loading much quicker\nBut some Phones have trouble!')
 -----------------------------------------------------------------------------
 local Prompt = gg.prompt({
 'SpeedNoteRemove',
+'Speedhackx2',
 'Speedhackx3',
-'Crit% - GOD',
-'FullMapLoading',
-'BigCircleForCat'
+'GodAttack',
+'GodDefence[PHY]',
+'DumbMonster',
+'ZoomMaxOut'
 },nil,
-{"checkbox","checkbox","checkbox","checkbox","checkbox"})
+{"checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox","checkbox"})
 if Prompt == nil then
   print('✖ Script Was Canceled ✖')
 return end
@@ -1234,37 +1474,66 @@ if Prompt[2] == true then
 	gg.setVisible(false)	
 	gg.searchNumber('h 00 00 80 3F AB AA AA 3E')								
 	gg.getResults(9000)
+	gg.editAll('h 00 00 40 40 AB AA AA 3E', gg.TYPE_BYTE)
+	gg.clearResults()
+else
+gg.toast ('❌ Checkbox is not selected ! ')
+end
+-----------------------------------------------------------------------------
+if Prompt[3] == true then
+	gg.setRanges(gg.REGION_ANONYMOUS)
+	gg.setVisible(false)	
+	gg.searchNumber('h 00 00 80 3F AB AA AA 3E')								
+	gg.getResults(9000)
 	gg.editAll('h 00 00 80 40 AB AA AA 3E', gg.TYPE_BYTE)
 	gg.clearResults()
 else
 gg.toast ('❌ Checkbox is not selected ! ')
 end
 -----------------------------------------------------------------------------
-if Prompt[3] == true then 
-	gg.setRanges(gg.REGION_ANONYMOUS)
- 	gg.setVisible(false)
- 	gg.searchNumber('h 7D 00 00 00 4B 00 00 00')
- 	gg.gg.editAll('h 40 4B 4C 00 4B 00 00 00')
- 	gg.clearResults()
-else
-gg.toast ('❌ Checkbox is not selected ! ')
-end
------------------------------------------------------------------------------
 if Prompt[4] == true then 
-	gg.setRanges(gg.REGION_ANONYMOUS)
- 	gg.setVisible(false)
- 	gg.searchNumber('h 00 00 00 00 00 E0 75 40')
- 	gg.gg.editAll('h 00 00 00 00 00 38 8F 40')
+	gg.setVisible(false)
+	gg.setRanges(gg.REGION_CODE_APP)
+	gg.searchNumber("h 00 10 2E 1E C0 03 5F D6 FF C3 00 D1 F5 53 01 A9 F3 7B 02 A9 94 71 02 F0 E0 0F 00 BD B5 48 02 90 B3 48 02 B0 88 FE 5C 39 B5 4E 46 F9 73 3A 44 F9")
+	gg.getResults(9999)
+	gg.editAll("h 00 01 24 1E C0 03 5F D6 FF C3 00 D1 F5 53 01 A9 F3 7B 02 A9 94 71 02 F0 E0 0F 00 BD B5 48 02 90 B3 48 02 B0 88 FE 5C 39 B5 4E 46 F9 73 3A 44 F9", gg.TYPE_BYTE)
+	gg.setVisible(false)
  	gg.clearResults()
 else
 gg.toast ('❌ Checkbox is not selected ! ')
 end
 -----------------------------------------------------------------------------
 if Prompt[5] == true then 
-	gg.setRanges(gg.REGION_ANONYMOUS)
- 	gg.setVisible(false)
- 	gg.searchNumber('h 00 00 A0 42 00 00 B4 42')
- 	gg.gg.editAll('h 00 40 9C 45 00 00 B4 42')
+	gg.setVisible(false)
+	gg.setRanges(gg.REGION_CODE_APP)
+	gg.searchNumber("h 00 10 2E 1E C0 03 5F D6 FF C3 00 D1 F5 53 01 A9 F3 7B 02 A9 94 71 02 F0 E0 0F 00 BD B5 48 02 90 B3 48 02 B0 88 0A 5D 39 B5 4E 46 F9 73 3A 44 F9")
+	gg.getResults(9999)
+	gg.editAll("h E0 03 27 1E C0 03 5F D6 FF C3 00 D1 F5 53 01 A9 F3 7B 02 A9 94 71 02 F0 E0 0F 00 BD B5 48 02 90 B3 48 02 B0 88 0A 5D 39 B5 4E 46 F9 73 3A 44 F9", gg.TYPE_BYTE)
+	gg.setVisible(false)
+ 	gg.clearResults()
+else
+gg.toast ('❌ Checkbox is not selected ! ')
+end
+-----------------------------------------------------------------------------
+if Prompt[6] == true then 
+	gg.setVisible(false)
+	gg.setRanges(gg.REGION_CODE_APP)
+	gg.searchNumber("h E0 03 1F 2A C0 03 5F D6 F5 53 BE A9 F3 7B 01 A9 94 71 02 F0 B5 48 02 90 88 E6 5C 39 B5 4E 46 F9")
+	gg.getResults(9999)
+	gg.editAll("h 20 00 80 52 C0 03 5F D6 F5 53 BE A9 F3 7B 01 A9 94 71 02 F0 B5 48 02 90 88 E6 5C 39 B5 4E 46 F9", gg.TYPE_BYTE)
+	gg.setVisible(false)
+ 	gg.clearResults()
+else
+gg.toast ('❌ Checkbox is not selected ! ')
+end
+-----------------------------------------------------------------------------
+if Prompt[7] == true then 
+	gg.setVisible(false)
+	gg.setRanges(gg.REGION_CODE_APP)
+	gg.searchNumber("h E0 03 1F 2A C0 03 5F D6 F5 53 BE A9 F3 7B 01 A9 94 71 02 B0 B5 47 02 B0 88 1A 5E 39 B5 6A 47 F9 F3 03 00 2A C8 00 00 37 A0 47 02 B0 00 68 47 F9")
+	gg.getResults(9999)
+	gg.editAll("h 20 00 80 D2 C0 03 5F D6 F5 53 BE A9 F3 7B 01 A9 94 71 02 B0 B5 47 02 B0 88 1A 5E 39 B5 6A 47 F9 F3 03 00 2A C8 00 00 37 A0 47 02 B0 00 68 47 F9", gg.TYPE_BYTE)
+	gg.setVisible(false)
  	gg.clearResults()
 else
 gg.toast ('❌ Checkbox is not selected ! ')
@@ -1275,6 +1544,7 @@ end
 	
 -- funtion 10 = EXIT
 
+--INFOS
 function cheat_11()
 			
 			
@@ -1287,7 +1557,7 @@ function cheat_11()
 				-- Keine Aktion durchführen
 			elseif menuPL == 1 then
 
-						gg.alert('This script was created by Hylianer.\nThanks also to the community\nwho often gave me helpful tips!\nSpecial thanks also to: \nMujurID & Betches\nDiscord: Discord.gg/hylistudio')
+						gg.alert('This script was created by Hylianer.\nThanks also to the community\nwho often gave me helpful tips!\nSpecial thanks also to: \nMujurID - he helped me much\nDiscord: Discord.gg/hylistudio')
 						
 
 			elseif menuPL == 2 then
@@ -1301,7 +1571,7 @@ function cheat_11()
 			
 			
 
-						gg.alert('這個腳本是由 Hylianer 創建的。\n也感謝社群\n他們經常給我有用的提示！\n特別感謝：\nMujurID 和 Betches\nDiscord： Discord.gg/hylistudio')
+						gg.alert('這個腳本是由 Hylianer 創建的。\n也感謝社群\n他們經常給我有用的提示！\n特別感謝：\nMujurID\nDiscord： Discord.gg/hylistudio')
 				
 				
 			elseif menuPL == 4 then
@@ -1321,27 +1591,6 @@ function cheat_11()
 		
 		
 		end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1923,8 +2172,6 @@ end
 A_user_given_offset()
 loopCheck()
 end
-
-
 
 
 
