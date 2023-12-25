@@ -1019,7 +1019,7 @@ gg.alert('Wait until you see the menu again!\n\nDepending on the amount of selec
 local Prompt = gg.prompt({
 "FullMapLoading",
 "BiggerCircle",
-"NoCircleForCat",
+"EasyPartBreaker",
 "PartBreakIsNotSlomo",
 "Change Attack (11K)",
 "Change Attack (5K)",
@@ -1063,12 +1063,16 @@ else
 gg.toast ('❌ Checkbox is not selected ! ')
 end
 -----------------------------------------------------------------------------
--- NoCircleForCat
+-- EasyPartBreaker
 if Prompt[3] == true then 
 	gg.setVisible(false)
-	valueFromClass("DistanceLayerInfo", "0x10", false, false, gg.TYPE_FLOAT)
+	valueFromClass("PartBreakInfo", "0x10", false, false, gg.TYPE_DWORD)
 	gg.getResults(999)
-	gg.editAll(1, gg.TYPE_FLOAT)
+	gg.editAll(999999999, gg.TYPE_DWORD)
+	gg.clearResults()
+	valueFromClass("PartBreakInfo", "0x14", false, false, gg.TYPE_FLOAT)
+	gg.getResults(999)
+	gg.editAll(999999999, gg.TYPE_FLOAT)
 	gg.clearResults()
 else
 gg.toast ('❌ Checkbox is not selected ! ')
