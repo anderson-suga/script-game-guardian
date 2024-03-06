@@ -1077,7 +1077,7 @@ gg.toast ('❌ Checkbox is not selected ! ')
 end
 -----------------------------------------------------------------------------
 -- Change Attack (11K)
-if Prompt[5] == true then 
+if Prompt[4] == true then 
 	gg.setVisible(false)
 	gg.setRanges(gg.REGION_ANONYMOUS)
 	valueFromClass("WeaponLevelSpecSettingsProto", "0x1C", false, false, gg.TYPE_DWORD)
@@ -1089,7 +1089,7 @@ gg.toast ('❌ Checkbox is not selected ! ')
 end
 -----------------------------------------------------------------------------
 -- Change Attack (13.5K)
-if Prompt[6] == true then 
+if Prompt[5] == true then 
 	gg.setVisible(false)
 	gg.setRanges(gg.REGION_ANONYMOUS)
 	valueFromClass("WeaponLevelSpecSettingsProto", "0x1C", false, false, gg.TYPE_DWORD)
@@ -1101,7 +1101,7 @@ gg.toast ('❌ Checkbox is not selected ! ')
 end
 -----------------------------------------------------------------------------
 -- Change Defense (7K)
-if Prompt[8] == true then 
+if Prompt[6] == true then 
 	gg.setVisible(false)
 	gg.setRanges(gg.REGION_ANONYMOUS)
 	valueFromClass("ArmorLevelSpecSettingsProto", "0x1C", false, false, gg.TYPE_DWORD)
@@ -1113,7 +1113,7 @@ gg.toast ('❌ Checkbox is not selected ! ')
 end
 -----------------------------------------------------------------------------
 -- (BowGunOptions) SmallRecoil
-if Prompt[9] == true then 
+if Prompt[7] == true then 
 	gg.setVisible(false)
 	gg.getResults(9000)
 	gg.refineNumber("1~5", gg.TYPE_DWORD)
@@ -1128,7 +1128,7 @@ gg.toast ('❌ Checkbox is not selected ! ')
 end
 -----------------------------------------------------------------------------
 -- (BowGunOptions) SmallReload
-if Prompt[10] == true then 
+if Prompt[8] == true then 
 	gg.setVisible(false)
 	gg.getResults(9000)
 	gg.refineNumber("1~5", gg.TYPE_DWORD)
@@ -1143,7 +1143,7 @@ gg.toast ('❌ Checkbox is not selected ! ')
 end
 -----------------------------------------------------------------------------
 -- (DualBladeOptions) UnlimitedDeamonMode
-if Prompt[11] == true then 
+if Prompt[9] == true then 
 	gg.setVisible(false)
 	gg.getResults(9000)
 	gg.refineNumber("1~5", gg.TYPE_DWORD)
@@ -1158,7 +1158,7 @@ gg.toast ('❌ Checkbox is not selected ! ')
 end
 -----------------------------------------------------------------------------
 -- (LongSword) AlwaysSpirit
-if Prompt[12] == true then 
+if Prompt[10] == true then 
 	gg.setVisible(false)
 	gg.getResults(9000)
 	gg.refineNumber("1~5", gg.TYPE_DWORD)
@@ -1173,7 +1173,7 @@ gg.toast ('❌ Checkbox is not selected ! ')
 end
 -----------------------------------------------------------------------------
 -- (LongSword) SpiritNoReduce
-if Prompt[13] == true then 
+if Prompt[11] == true then 
 	gg.setVisible(false)
 	gg.getResults(9000)
 	gg.refineNumber("1~5", gg.TYPE_DWORD)
@@ -1188,7 +1188,7 @@ gg.toast ('❌ Checkbox is not selected ! ')
 end
 -----------------------------------------------------------------------------
 -- SetTPWeaponLevels
-if Prompt[14] == true then 
+if Prompt[12] == true then 
 	valueFromClass("UserHunterWeapon", "0x2C", false, false, gg.TYPE_DWORD)
 	gg.setVisible(false)
 	gg.getResults(9000)
@@ -1201,7 +1201,7 @@ gg.toast ('❌ Checkbox is not selected ! ')
 end
 -----------------------------------------------------------------------------
 -- SetTPArmorLevels
-if Prompt[15] == true then 
+if Prompt[13] == true then 
 	valueFromClass("UserHunterArmor", "0x2C", false, false, gg.TYPE_DWORD)
 	gg.setVisible(false)
 	gg.getResults(9000)
