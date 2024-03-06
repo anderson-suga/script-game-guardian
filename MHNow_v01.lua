@@ -1093,8 +1093,8 @@ if Prompt[5] == true then
 	gg.setVisible(false)
 	gg.setRanges(gg.REGION_ANONYMOUS)
 	valueFromClass("WeaponLevelSpecSettingsProto", "0x1C", false, false, gg.TYPE_DWORD)
-	gg.getResults(13500)
-	gg.editAll("5000", gg.TYPE_DWORD)
+	gg.getResults(9000)
+	gg.editAll("13500", gg.TYPE_DWORD)
 	gg.clearResults()
 else
 gg.toast ('❌ Checkbox is not selected ! ')
